@@ -1,11 +1,12 @@
 import React from 'react'
-import { TextInput, Image } from 'react-native'
+import { TextInput } from 'react-native'
 import { StyledView, InputContainer } from './styles'
+import SearchIcon from 'assets/svgs/search.svg'
 
 function SearchInput({ onChange }) {
   return (
     <StyledView>
-      <Image source={require('../../assets/search.png')} />
+      <SearchIcon />
       <InputContainer>
         <TextInput placeholder="Search..." onChangeText={onChange} />
       </InputContainer>

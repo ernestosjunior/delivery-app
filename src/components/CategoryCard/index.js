@@ -1,6 +1,8 @@
 import React from 'react'
 import { Pressable } from 'react-native'
 import { Container, Title, StyledImage, Button, IconButton } from './styles'
+import ArrowBlack from 'assets/svgs/arrowRightBlack.svg'
+import ArrowWhite from 'assets/svgs/arrowRightWhite.svg'
 import { useRoot } from 'store'
 
 function CategoryCard({ icon, title, onClick, id }) {
@@ -26,11 +28,7 @@ function CategoryCard({ icon, title, onClick, id }) {
 }
 
 const RenderIcon = ({ isSelected }) => {
-  return isSelected ? (
-    <IconButton source={require('../../assets/arrowRightBlack.png')} />
-  ) : (
-    <IconButton source={require('../../assets/arrowRightWhite.png')} />
-  )
+  return isSelected ? <ArrowBlack /> : <ArrowWhite />
 }
 
 export default CategoryCard

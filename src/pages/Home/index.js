@@ -32,14 +32,15 @@ function Home() {
         <SearchInput />
         <TitleSection>Categories</TitleSection>
         <ListCategory horizontal showsHorizontalScrollIndicator={false}>
-          {categories.map(({ icon, title }) => (
+          {categories.map(({ icon, title, key }) => (
             <CategoryCard
+              id={key}
               icon={icon}
               title={title}
               onClick={() =>
                 RootDispatch({
                   type: 'setCategory',
-                  payload: { category: icon },
+                  payload: { category: key },
                 })
               }
             />

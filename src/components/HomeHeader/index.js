@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyledContainer } from './styles'
-import { ProfileIcon, Menu } from '../'
+import { ProfileIcon, Menu } from 'components'
 
 function HomeHeader() {
   return (
