@@ -1,11 +1,12 @@
 import styled from 'styled-components'
 
 export const StyledView = styled.View`
+  align-items: center;
   flex-direction: row;
   width: 100%;
   padding-left: 20px;
   padding-right: 20px;
-  padding-top: 30px;
+  padding-top: 20px;
 `
 
 export const InputContainer = styled.View`
