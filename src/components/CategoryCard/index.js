@@ -38,6 +38,10 @@ const RenderImage = ({ icon }) => {
     return <StyledImage source={require('../../assets/icons/bread.png')} />
   }
 
+  if (icon === 'iceCreams') {
+    return <StyledImage source={require('../../assets/icons/iceCreams.png')} />
+  }
+
   return null
 }
 
