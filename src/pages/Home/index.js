@@ -1,6 +1,6 @@
 import React from 'react'
 import { SafeAreaView, ScrollView } from 'react-native'
-import { HomeHeader, SearchInput, CategoryCard } from '../../components'
+import { HomeHeader, SearchInput, CategoryCard } from 'components'
 import {
   PrimaryTitle,
   SecondTitle,
@@ -8,7 +8,7 @@ import {
   ListCategory,
   TitleSection,
 } from './styles'
-import { useRoot } from '../../store/hooks/useRoot'
+import { useRoot } from 'store'
 import { categories } from './data'
 
 function Home() {

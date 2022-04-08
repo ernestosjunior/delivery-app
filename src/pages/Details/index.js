@@ -1,6 +1,6 @@
 import React from 'react'
 import { ScrollView, SafeAreaView } from 'react-native'
-import { DetailsHeader } from '../../components'
+import { DetailsHeader } from 'components'
 import { useNavigation } from '@react-navigation/native'
 
 function Details() {

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Pressable } from 'react-native'
 import { Container, Title, StyledImage, Button, IconButton } from './styles'
-import { useRoot } from '../../store/hooks/useRoot'
+import { useRoot } from 'store'
 
 function CategoryCard({ icon, title, onClick }) {
   const { RootState } = useRoot()
