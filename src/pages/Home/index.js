@@ -45,6 +45,7 @@ function Home() {
             />
           ))}
         </ListCategory>
+        <TitleSection>Popular</TitleSection>
       </ScrollView>
     </SafeAreaView>
   )

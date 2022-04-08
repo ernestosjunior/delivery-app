@@ -25,7 +25,6 @@ export const ListCategory = styled.ScrollView`
   width: 100%;
   margin-top: 15px;
   padding-top: 15px;
-  padding-bottom: 20px;
 `
 export const TitleSection = styled.Text`
   font-style: normal;
