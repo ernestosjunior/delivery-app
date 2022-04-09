@@ -4,10 +4,10 @@ export const Container = styled.View`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
   width: 105px;
   height: 177px;
   background-color: ${props => (props.isSelected ? '#F5CA48' : '#FFFFFF')};
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   margin-left: 20px;
 `

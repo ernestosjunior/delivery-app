@@ -1,5 +1,5 @@
 import React from 'react'
-import { SafeAreaView, ScrollView } from 'react-native'
+import { SafeAreaView, ScrollView, ImageBackground } from 'react-native'
 import { HomeHeader, SearchInput, CategoryCard, PopularCard } from 'components'
 import {
   PrimaryTitle,
@@ -10,10 +10,12 @@ import {
   ListPopular,
 } from './styles'
 import { useRoot } from 'store'
-import { categories } from './data'
+import { useNavigation } from '@react-navigation/native'
+import { categories, populars } from './data'
 
 function Home() {
   const { RootDispatch } = useRoot()
+  const { navigate } = useNavigation()
 
   React.useEffect(() => {
     RootDispatch({
@@ -24,7 +26,7 @@ function Home() {
 
   return (
     <SafeAreaView>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <HomeHeader />
         <TitleContainer>
           <PrimaryTitle>Food</PrimaryTitle>
@@ -49,7 +51,15 @@ function Home() {
         </ListCategory>
         <TitleSection>Popular</TitleSection>
         <ListPopular>
-          <PopularCard evaluation={'5.0'} />
+          {populars.map(({ name, evaluation, weight, img }) => (
+            <PopularCard
+              evaluation={evaluation}
+              name={name}
+              weight={weight}
+              img={img}
+              onClick={() => navigate('Details')}
+            />
+          ))}
         </ListPopular>
       </ScrollView>
     </SafeAreaView>

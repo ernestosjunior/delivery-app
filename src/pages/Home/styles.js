@@ -19,12 +19,12 @@ export const SecondTitle = styled.Text`
 `
 export const TitleContainer = styled.View`
   margin-left: 20px;
-  margin-top: 30px;
 `
 export const ListCategory = styled.ScrollView`
   width: 100%;
   margin-top: 15px;
   padding-top: 15px;
+  padding-bottom: 15px;
 `
 export const TitleSection = styled.Text`
   font-style: normal;
