@@ -1,12 +1,13 @@
 import React from 'react'
 import { SafeAreaView, ScrollView } from 'react-native'
-import { HomeHeader, SearchInput, CategoryCard } from 'components'
+import { HomeHeader, SearchInput, CategoryCard, PopularCard } from 'components'
 import {
   PrimaryTitle,
   SecondTitle,
   TitleContainer,
   ListCategory,
   TitleSection,
+  ListPopular,
 } from './styles'
 import { useRoot } from 'store'
 import { categories } from './data'
@@ -47,6 +48,9 @@ function Home() {
           ))}
         </ListCategory>
         <TitleSection>Popular</TitleSection>
+        <ListPopular>
+          <PopularCard evaluation={'5.0'} />
+        </ListPopular>
       </ScrollView>
     </SafeAreaView>
   )

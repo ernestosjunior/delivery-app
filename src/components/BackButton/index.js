@@ -1,12 +1,13 @@
 import React from 'react'
-import { Pressable, Image } from 'react-native'
+import { Pressable } from 'react-native'
 import { StyledContainer } from './styles'
+import Arrow from 'assets/svgs/arrowLeftBlack.svg'
 
 function BackButton({ onClick }) {
   return (
     <Pressable onPress={onClick}>
       <StyledContainer>
-        <Image source={require('../../assets/leftArrow.png')} />
+        <Arrow />
       </StyledContainer>
     </Pressable>
   )

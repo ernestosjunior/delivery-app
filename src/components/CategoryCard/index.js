@@ -20,14 +20,14 @@ function CategoryCard({ icon, title, onClick, id }) {
         />
         <Title>{title}</Title>
         <Button isSelected={isSelected}>
-          <RenderIcon isSelected={isSelected} />
+          <Arrow isSelected={isSelected} />
         </Button>
       </Container>
     </Pressable>
   )
 }
 
-const RenderIcon = ({ isSelected }) => {
+const Arrow = ({ isSelected }) => {
   return isSelected ? <ArrowBlack /> : <ArrowWhite />
 }
 
