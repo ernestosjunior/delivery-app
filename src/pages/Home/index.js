@@ -11,13 +11,21 @@ import {
 } from './styles'
 import { useRoot } from 'store'
 import { useNavigation } from '@react-navigation/native'
-import { categories, populars } from './data'
+import { getCategories, getPopular } from 'services'
 
 function Home() {
-  const { RootDispatch } = useRoot()
+  const { RootDispatch, RootState } = useRoot()
   const { navigate } = useNavigation()
 
   React.useEffect(() => {
+    async function fetchCategories() {
+      const categories = await getCategories()
+      const popular = await getPopular()
+
+      RootDispatch({ type: 'setCategories', payload: { categories } })
+      RootDispatch({ type: 'setPopular', payload: { popular } })
+    }
+    fetchCategories()
     RootDispatch({
       type: 'setCategory',
       payload: { category: 'pizza' },
@@ -35,7 +43,7 @@ function Home() {
         <SearchInput />
         <TitleSection>Categories</TitleSection>
         <ListCategory horizontal showsHorizontalScrollIndicator={false}>
-          {categories.map(({ icon, title, key }) => (
+          {RootState.categories.map(({ icon, title, key }) => (
             <CategoryCard
               id={key}
               icon={icon}
@@ -51,7 +59,7 @@ function Home() {
         </ListCategory>
         <TitleSection>Popular</TitleSection>
         <ListPopular>
-          {populars.map(({ name, evaluation, weight, img }) => (
+          {RootState.popular.map(({ name, evaluation, weight, img }) => (
             <PopularCard
               evaluation={evaluation}
               name={name}
