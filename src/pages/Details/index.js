@@ -1,18 +1,20 @@
 import React from 'react'
-import { ScrollView, SafeAreaView } from 'react-native'
-import { DetailsHeader } from 'components'
+import { ScrollView, SafeAreaView, Text } from 'react-native'
+import { DetailsHeader, NameAndValue } from 'components'
 import { useNavigation } from '@react-navigation/native'
 
-function Details() {
+function Details({ route }) {
   const { navigate } = useNavigation()
+  const { name, price } = route.params.product
 
   return (
     <SafeAreaView>
-      <ScrollView>
+      <ScrollView style={{ height: '100%' }}>
         <DetailsHeader
           clickOnBackButton={() => navigate('Home')}
           clickOnFavoriteButton={() => null}
         />
+        <NameAndValue name={name} price={price} />
       </ScrollView>
     </SafeAreaView>
   )

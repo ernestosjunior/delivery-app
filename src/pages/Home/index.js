@@ -11,7 +11,7 @@ import {
 } from './styles'
 import { useRoot } from 'store'
 import { useNavigation } from '@react-navigation/native'
-import { getCategories, getPopular } from 'services'
+import { getCategories, getPopular, getDetails } from 'services'
 
 function Home() {
   const { RootDispatch, RootState } = useRoot()
@@ -32,9 +32,17 @@ function Home() {
     })
   }, [])
 
+  const handleDetails = async ({ id }) => {
+    const response = await getDetails({ id })
+
+    navigate('Details', { product: response[0] })
+  }
+
   return (
     <SafeAreaView>
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={{ height: '100%' }}>
         <HomeHeader />
         <TitleContainer>
           <PrimaryTitle>Food</PrimaryTitle>
@@ -45,6 +53,7 @@ function Home() {
         <ListCategory horizontal showsHorizontalScrollIndicator={false}>
           {RootState.categories.map(({ icon, title, key }) => (
             <CategoryCard
+              key={key}
               id={key}
               icon={icon}
               title={title}
@@ -59,13 +68,14 @@ function Home() {
         </ListCategory>
         <TitleSection>Popular</TitleSection>
         <ListPopular>
-          {RootState.popular.map(({ name, evaluation, weight, img }) => (
+          {RootState.popular.map(({ name, evaluation, weight, img, id }) => (
             <PopularCard
+              key={id}
               evaluation={evaluation}
               name={name}
               weight={weight}
               img={img}
-              onClick={() => navigate('Details')}
+              onClick={() => handleDetails({ id })}
             />
           ))}
         </ListPopular>

@@ -35,10 +35,22 @@ export const populars = [
     img: 'https://res.cloudinary.com/dcgzbotx7/image/upload/v1649460275/pizza1_rnptms.png',
   },
   {
-    id: 2,
+    id: 1,
     name: 'Primavera Pizza',
     evaluation: 5.0,
     weight: 540,
     img: 'https://res.cloudinary.com/dcgzbotx7/image/upload/v1649460275/pizza1_rnptms.png',
+  },
+]
+
+export const products = [
+  {
+    id: 1,
+    name: 'Primavera Pizza',
+    price: '5.99',
+    size: 'Medium 14”',
+    crust: 'Thin Crust',
+    deliveryIn: '30',
+    ingredients: ['tomato', 'garlic', 'ham', 'cheese'],
   },
 ]
