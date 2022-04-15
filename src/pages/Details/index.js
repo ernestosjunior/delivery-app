@@ -1,11 +1,11 @@
 import React from 'react'
 import { ScrollView, SafeAreaView, Text } from 'react-native'
-import { DetailsHeader, NameAndValue } from 'components'
+import { DetailsHeader, NameAndValue, InfoSection } from 'components'
 import { useNavigation } from '@react-navigation/native'
 
 function Details({ route }) {
   const { navigate } = useNavigation()
-  const { name, price } = route.params.product
+  const { name, price, size, crust, deliveryIn, img } = route.params.product
 
   return (
     <SafeAreaView>
@@ -15,6 +15,12 @@ function Details({ route }) {
           clickOnFavoriteButton={() => null}
         />
         <NameAndValue name={name} price={price} />
+        <InfoSection
+          size={size}
+          crust={crust}
+          deliveryIn={deliveryIn}
+          img={img}
+        />
       </ScrollView>
     </SafeAreaView>
   )

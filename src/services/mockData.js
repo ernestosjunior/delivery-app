@@ -52,5 +52,6 @@ export const products = [
     crust: 'Thin Crust',
     deliveryIn: '30',
     ingredients: ['tomato', 'garlic', 'ham', 'cheese'],
+    img: 'https://res.cloudinary.com/dcgzbotx7/image/upload/v1649460275/pizza1_rnptms.png',
   },
 ]
