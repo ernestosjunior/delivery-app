@@ -1,3 +1,5 @@
+import { faker } from '@faker-js/faker'
+
 export const categories = [
   {
     key: 'pizza',
@@ -26,33 +28,37 @@ export const categories = [
   },
 ]
 
+const one = faker.datatype.uuid()
+const two = faker.datatype.uuid()
+const three = faker.datatype.uuid()
+
 export const populars = [
   {
-    id: 1,
+    id: one,
     name: 'Primavera Pizza',
     evaluation: 5.0,
     weight: 540,
     img: 'https://res.cloudinary.com/dcgzbotx7/image/upload/v1649460275/pizza1_rnptms.png',
   },
   {
-    id: 2,
-    name: 'Primavera Pizza',
-    evaluation: 5.0,
-    weight: 540,
-    img: 'https://res.cloudinary.com/dcgzbotx7/image/upload/v1649460275/pizza1_rnptms.png',
+    id: two,
+    name: 'Italian Pizzaria',
+    evaluation: 4.9,
+    weight: 480,
+    img: 'https://res.cloudinary.com/dcgzbotx7/image/upload/v1649460282/pizza2_rxexg3.png',
   },
   {
-    id: 3,
-    name: 'Primavera Pizza',
-    evaluation: 5.0,
+    id: three,
+    name: 'Mama Mia Pizzaria',
+    evaluation: 4.8,
     weight: 540,
-    img: 'https://res.cloudinary.com/dcgzbotx7/image/upload/v1649460275/pizza1_rnptms.png',
+    img: 'https://res.cloudinary.com/dcgzbotx7/image/upload/v1649460296/pizza3_bou03f.png',
   },
 ]
 
 export const products = [
   {
-    id: 1,
+    id: one,
     name: 'Primavera Pizza',
     price: '5.99',
     size: 'Medium 14”',
@@ -60,5 +66,25 @@ export const products = [
     deliveryIn: '30',
     ingredients: ['tomato', 'garlic', 'ham', 'cheese'],
     img: 'https://res.cloudinary.com/dcgzbotx7/image/upload/v1649460275/pizza1_rnptms.png',
+  },
+  {
+    id: two,
+    name: 'Italian Pizzaria',
+    price: '7.99',
+    size: 'Medium 14”',
+    crust: 'Thin Crust',
+    deliveryIn: '50',
+    ingredients: ['tomato', 'garlic', 'ham', 'cheese'],
+    img: 'https://res.cloudinary.com/dcgzbotx7/image/upload/v1649460282/pizza2_rxexg3.png',
+  },
+  {
+    id: three,
+    name: 'Mama Mia Pizzaria',
+    price: '7.99',
+    size: 'Medium 14”',
+    crust: 'Thin Crust',
+    deliveryIn: '50',
+    ingredients: ['tomato', 'garlic', 'ham', 'cheese'],
+    img: 'https://res.cloudinary.com/dcgzbotx7/image/upload/v1649460296/pizza3_bou03f.png',
   },
 ]

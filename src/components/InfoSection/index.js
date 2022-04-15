@@ -27,7 +27,7 @@ function InfoSection({ size, crust, deliveryIn, img }) {
         </ContainerText>
       </Left>
       <Right>
-        <Image source={{ uri: img }} />
+        <Image source={{ uri: img }} resizeMode="contain" />
       </Right>
     </Container>
   )
